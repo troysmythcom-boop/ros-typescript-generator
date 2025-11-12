@@ -92,6 +92,36 @@ export enum ExampleMessageConst {
   t.is(result, expected);
 });
 
+test('generateFromRosMsg with enum only message', (t) => {
+  const result = generateFromRosMsg(
+    `MSG: example/MessageConstants
+  uint8 NONE=0
+  uint8 PARK=1
+  uint8 REVERSE=2
+  uint8 NEUTRAL=3
+  uint8 DRIVE=4
+  uint8 LOW=5
+
+  ===
+  MSG: example/Message
+  example/MessageConstants gear`
+  );
+
+  const expected = `export enum ExampleMessageConstants {
+  NONE = 0,
+  PARK = 1,
+  REVERSE = 2,
+  NEUTRAL = 3,
+  DRIVE = 4,
+  LOW = 5,
+}
+
+export interface ExampleMessage {
+  gear: ExampleMessageConstants;
+}`;
+  t.is(result, expected);
+});
+
 test('generateFromRosMsg with enum which are prefixed', (t) => {
   const result = generateFromRosMsg(
     `MSG: example/Message
@@ -347,7 +377,7 @@ test('generateFromRosMsg with bool enum', (t) => {
 `
   );
 
-  const expected = `export enum TestMsgsStateConst {
+  const expected = `export enum TestMsgsState {
   OFF = 0,
   ON = 1,
 }`;
@@ -363,7 +393,7 @@ test('generateFromRosMsg with string enum', (t) => {
 `
   );
 
-  const expected = `export enum TestMsgsStateConst {
+  const expected = `export enum TestMsgsState {
   OFF = 'off',
   ON = 'on',
 }`;

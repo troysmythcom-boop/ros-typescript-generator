@@ -262,9 +262,11 @@ ${enumEntriesFromFields(candidates_without_prefix)}
 ${tsTypes}
 }`;
 
+      // If there are no fields (only constants), don't add "Const" suffix
+      const enumName = tsTypes.length > 0 ? `${typeName}Const` : typeName;
       const tsRemainingEnumFinal =
         tsRemainingEnum.length > 0 &&
-        `export enum ${typeName}Const {
+        `export enum ${enumName} {
 ${tsRemainingEnum}
 }`;
 

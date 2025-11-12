@@ -123,6 +123,9 @@ uint8 more
 				<pre><code class="language-json">{
   <span class="hljs-attr">&quot;output&quot;</span>: <span class="hljs-string">&quot;./generated/ros_msgs.ts&quot;</span>,
   <span class="hljs-attr">&quot;rosVersion&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-comment">// 1 or 2</span>
+  <span class="hljs-attr">&quot;typePrefix&quot;</span>: <span class="hljs-string">&quot;IRosType&quot;</span>,
+  <span class="hljs-attr">&quot;useNamespaces&quot;</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// Should we use namespaces for ROS packages?</span>
+  <span class="hljs-attr">&quot;smartEnums&quot;</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// Should we use smart enums (as described above)</span>
   <span class="hljs-attr">&quot;input&quot;</span>: [
     {
       <span class="hljs-attr">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;std_msgs&quot;</span>,
@@ -134,7 +137,6 @@ uint8 more
     },
     <span class="hljs-comment">// Add any other messages including your own custom messages.</span>
   ],
-  <span class="hljs-attr">&quot;typePrefix&quot;</span>: <span class="hljs-string">&quot;IRosType&quot;</span>
 }
 </code></pre>
 				<ul>

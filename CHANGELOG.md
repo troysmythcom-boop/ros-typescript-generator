@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/Greenroom-Robotics/ros-typescript-generator/compare/v1.9.0...v1.10.0) (2025-11-12)
+
+
+### Features
+
+* only add Const suffix if part of a message with fields ([#26](https://github.com/Greenroom-Robotics/ros-typescript-generator/issues/26)) ([e23bb85](https://github.com/Greenroom-Robotics/ros-typescript-generator/commit/e23bb85a987604f0dee962adbd07ef2541cb0a93))
+
 ## [1.9.0](https://github.com/Greenroom-Robotics/ros-typescript-generator/compare/v1.8.1...v1.9.0) (2024-02-28)
 
 
